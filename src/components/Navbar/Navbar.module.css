@@ -3,6 +3,15 @@
   background-color: brown;
 }
 
-.item {
+.item a
+{
+  text-decoration: none;
+}
+
+.inactiveLink {
   color: white;
+}
+
+.activeLink {
+  color: gold;
 }
