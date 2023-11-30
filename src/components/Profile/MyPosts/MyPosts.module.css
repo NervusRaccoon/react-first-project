@@ -1,0 +1,17 @@
+.profileBackIcon img {
+    width: 1500px;
+    height: 500px;
+  }
+  
+  .avatar img {
+    width: 200px;
+  }
+
+  .content {
+    grid-area: c;
+    background-color: bisque;
+  }
+
+  .item {
+    color: #000;
+  }
