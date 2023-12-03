@@ -1,7 +1,10 @@
 import PostItem from './Post/PostItem';
 import classes from './MyPosts.module.css';
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
+  let postsElemets = props.posts.map(post => <PostItem message={post.message} userName={post.userName} likesCount={post.likesCount} />)
+
   return (
     <div className={classes.content}>
       <div className={classes.postsLabel}>
@@ -12,12 +15,7 @@ const MyPosts = () => {
         <button className={classes.postButton}>POST</button>
       </div>
       <div className={classes.posts}>
-        <PostItem message="Yo" likesCount='2' userName='Kamisato Ayato' />
-        <PostItem message="YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo" likesCount='200' userName='Ayato' />
-        <PostItem message="YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo" likesCount='200' userName='Ayato' />
-        <PostItem message="YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo" likesCount='200' userName='Ayato' />
-        <PostItem message="YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo" likesCount='200' userName='Ayato' />
-        <PostItem message="YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo" likesCount='200' userName='Ayato' />
+        {postsElemets}
       </div>
     </div>
   );
