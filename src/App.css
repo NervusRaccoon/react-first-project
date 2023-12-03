@@ -8,13 +8,21 @@
   "h h"
   "n c";
   grid-template-rows: 1fr 20fr;
-  grid-template-columns: 1fr 10fr;
+  grid-template-columns: 3fr 20fr;
   grid-gap: 10px;
-  padding-left: 10px;
 }
 
 .app-wrapper-content
 {
   grid-area: c;
-  background-color: bisque;
+}
+
+.app-navbar
+{
+  padding-left: 10px;
+}
+
+.app-header
+{
+  grid-area: h;
 }

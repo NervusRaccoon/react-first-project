@@ -1,17 +1,12 @@
 .nav {
   grid-area: n;
-  background-color: brown;
-}
-
-.item a
-{
-  text-decoration: none;
-}
-
-.inactiveLink {
-  color: white;
-}
-
-.activeLink {
-  color: gold;
+  background-color: #B178FF;
+  border-radius: 15px;
+  border-color: #6100A8;
+  border-style: solid;
+  border-width: 4px;
+  height: 800px;
+  width: auto;
+  align-self: center;
+  justify-self: center;
 }

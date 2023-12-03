@@ -1,16 +1,23 @@
-import Posts from './Post/Posts';
+import PostItem from './Post/PostItem';
 import classes from './MyPosts.module.css';
 
 const MyPosts = () => {
   return (
     <div className={classes.content}>
-      <div>
-        <textarea />
-        <button>Post</button>
+      <div className={classes.postsLabel}>
+        My posts
       </div>
-      <div>
-        <Posts message="Yo" likesCount='2'/>
-        <Posts message="I wanna play DnD(9(((" likesCount='200'/>
+      <div >
+        <textarea className={classes.textArea} />
+        <button className={classes.postButton}>POST</button>
+      </div>
+      <div className={classes.posts}>
+        <PostItem message="Yo" likesCount='2' userName='Kamisato Ayato' />
+        <PostItem message="YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo" likesCount='200' userName='Ayato' />
+        <PostItem message="YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo" likesCount='200' userName='Ayato' />
+        <PostItem message="YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo" likesCount='200' userName='Ayato' />
+        <PostItem message="YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo" likesCount='200' userName='Ayato' />
+        <PostItem message="YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo" likesCount='200' userName='Ayato' />
       </div>
     </div>
   );

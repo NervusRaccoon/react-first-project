@@ -1,0 +1,61 @@
+.userIcon img {
+  grid-area: i;
+  width: 60px;
+  height: 60px;
+  border-radius: 45px;
+  border: 2px solid #6100A8;
+}
+
+.message {
+  grid-area: m;
+  align-self: center;
+  border-radius: 15px;
+  background-color: #A9D9EB;
+  color: #6100A8;
+  width: max-content;
+  max-width: 570px;
+  height: auto;
+  text-align: left;
+  padding: 10px;
+  font-size: 18px;
+  font-style: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  overflow-wrap: break-word;
+  border: 2px solid #7F0BFF;
+}
+
+.userName {
+  grid-area: n;
+  align-self: center;
+  border-radius: 15px;
+  background-color: #B178FF;
+  color: #6100A8;
+  width: max-content;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-style: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.like {
+  grid-area: l;
+  justify-self:right;
+  color: #6100A8;
+  font-size: 18px;
+  font-style: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.postContent {
+  display: grid;
+  grid-template-areas:
+    "i n"
+    "i m"
+    "i l";
+  grid-template-rows: 20px auto 30px;
+  grid-template-columns: 65px 570px;
+  grid-gap: 5px;
+}

@@ -1,7 +1,43 @@
-.avatar img {
-  width: 200px;
+.profileInfo  
+{
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-items: center;
+  background-image: url('https://sun9-53.userapi.com/impg/Lq4fq1JZPgRAaiN6RZ_oRP230clhxktzbmUbgw/kDeIV-GWz_U.jpg?size=1839x1080&quality=95&sign=8697b99907bdf1a9e6a30bfb152e7f01&type=album');
+  background-position-y: center;
+  height: 350px;
+  border-radius: 15px;
+  border-color: #6100A8;
+  border-style: solid;
+  border-width: 3px;
 }
 
-.userInfo {
-  padding-left: 1%;
+.userAvatar img{
+  width: 250px;
+  height: 280px;
+  object-fit: contain;
+  border-radius: 15px;
+  border-color: #6100A8;
+  background-color: white;
+  border-style: solid;
+  border-width: 3px;
+  margin-left: 20px;
+}
+
+.userName {
+  border-radius: 15px;
+  background-color: #B178FF;
+  color: #6100A8;
+  width: 300px;
+  height: 35px;
+  text-align: center;
+  font-size: 30px;
+  font-style: bold;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  align-self: flex-start;
+  margin-top: 30px;
+}
+
+.content {
+  padding-right: 20px;
 }

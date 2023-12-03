@@ -4,17 +4,16 @@ import MyPosts from './MyPosts/MyPosts';
 const Profile = () => {
   return (
     <div className={classes.content}>
-      <div className={classes.profileBackIcon}>
-        <img src='https://t4.ftcdn.net/jpg/05/76/85/69/360_F_576856958_4tJcdTzfGLRITTyKMb00SAZfdvrNNViZ.jpg' />
-      </div>
-      <div className={classes.userInfo}>
-        <div className={classes.avatar}>
-          <img src='https://www.shutterstock.com/image-vector/dice-playing-dnd-tabletop-roleplaying-600nw-2208372513.jpg' />
+      <div className={classes.profileInfo}>
+        <div className={classes.userAvatar}>
+          <img src='https://sun9-51.userapi.com/impg/9izUnZrJGLRvf6l5_ZivPt1nsfr26TtYw9Psjg/XjwpKSwdc0w.jpg?size=1376x2048&quality=95&sign=2a493205ec633b5415b6589e854492d8&type=album' />
+        </div>
+        <div className={classes.userName}>
           User Name
         </div>
-        <div className={classes.posts}>
-          <MyPosts />
-        </div>
+      </div>
+      <div className={classes.posts}>
+        <MyPosts />
       </div>
     </div>
   );

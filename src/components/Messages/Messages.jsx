@@ -1,26 +1,17 @@
+import Companion from './Companion/Companion';
+import MessageItem from './MessageItem/MessageItem';
 import classes from './Messages.module.css';
 
 const Messages = () => {
     return (
         <div className={classes.content}>
           <div className={classes.companionsList}>
-            <div className={classes.companionInfo}>
-              User 1
-            </div>
-            <div className={classes.companionInfo}>
-              User 2
-            </div>
+            <Companion name='Ranger' id='1'/>
+            <Companion name='Rogue' id='2'/>
           </div>
           <div className={classes.messagesContainer}>
-            <div className={classes.message}>
-              Message 1
-            </div>
-            <div className={classes.message}>
-              Message 2
-            </div>
-            <div className={classes.message}>
-              Message 3
-            </div>
+            <MessageItem message="Yo" />
+            <MessageItem message="How r u?"/>
           </div>
         </div>
     );
