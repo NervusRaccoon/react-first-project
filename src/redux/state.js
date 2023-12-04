@@ -2,16 +2,17 @@ let state = {
     messagePage: {
         messagesData: [{
             userId: 1, userName: 'Ayaka', messages:
-                [{ id: 1, userName: 'Ayaka', message: 'Hello, brother. Can you please ...' },
-                { id: 2, userName: 'Ayato', message: 'Ok' }]
+                [{ id: 1, userName: 'Ayaka', message: 'Hello, brother. Can you please ...', side: 'left' },
+                { id: 2, userName: 'Ayato', message: 'Ok', side: 'right' }]
         },
-        { userId: 2, userName: 'GREATEST Arataki Itto', messages: [{ id: 1, userName: 'GREATEST Arataki Itto', message: 'Yo bro iwanna oadggggkkkl' }] },
+        { userId: 2, userName: 'GREATEST Arataki Itto', messages: [{ id: 1, userName: 'GREATEST Arataki Itto', message: 'Yo bro iwanna oadggggkkkl', side: 'left' }] },
         {
             userId: 3, userName: 'Toma', messages:
-                [{ id: 1, userName: 'Toma', message: 'Waka, please, dont throw documents around the office...' },
-                { id: 2, userName: 'Ayato', message: 'It wasn`t me. Taromaru did it' },
-                { id: 3, userName: 'Toma', message: 'Are you joking?' },
-                { id: 4, userName: 'Ayato', message: 'y' }]
+                [{ id: 1, userName: 'Toma', message: 'Waka, please, dont throw documents around the office...', side: 'left' },
+                { id: 2, userName: 'Ayato', message: 'It wasn`t me', side: 'right' },
+                { id: 3, userName: 'Ayato', message: 'Taromaru did it', side: 'right' },
+                { id: 4, userName: 'Toma', message: 'Are you joking?', side: 'left'  },
+                { id: 5, userName: 'Ayato', message: 'y', side: 'right' }]
         }]
     },
 
