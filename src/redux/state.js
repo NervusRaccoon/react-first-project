@@ -1,6 +1,13 @@
+const ADD_POST = "ADD_POST"
+const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT"
+
+const ADD_MESSAGE = "ADD_MESSAGE"
+const UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT"
+
 let store = {
     state: {
         messagePage: {
+            newMessageText: { userId: 1, message: '' },
             messagesData: [{
                 userId: 1, userName: 'Ayaka', messages:
                     [{ id: 1, userName: 'Ayaka', message: 'Hello, brother. Can you please ...', side: 'left' },
@@ -26,7 +33,7 @@ let store = {
         }
     },
     _addPost() {
-        if (this.state.profilePage.newPostText != '') {
+        if (this.state.profilePage.newPostText !== '') {
             let newPost = { userName: 'Ayato', message: this.state.profilePage.newPostText, likesCount: 0 };
             this.state.profilePage.posts.push(newPost);
             this.state.profilePage.newPostText = '';
@@ -37,12 +44,35 @@ let store = {
         this.state.profilePage.newPostText = message;
         this._renderEntireTree();
     },
+    _addMessage() {
+        if (this.state.messagePage.newMessageText.message !== '') {
+            let dialog = this.state.messagePage.messagesData.find(x => x.userId == this.state.messagePage.newMessageText.userId)
+            let newMessage = {
+                id: dialog.messages[dialog.messages.length - 1].id + 1, userName: 'Ayato',
+                message: this.state.messagePage.newMessageText.message, side: 'right'
+            };
+            dialog.messages.push(newMessage);
+            this.state.messagePage.newMessageText = { userId: this.state.messagePage.newMessageText.userId, message: '' };
+            this._renderEntireTree();
+        }
+    },
+    _updateNewMessageText(data) {
+        this.state.messagePage.newMessageText.userId = data.userId;
+        this.state.messagePage.newMessageText.message = data.message;
+        this._renderEntireTree();
+    },
     dispatch(action) {
-        if (action.type === "ADD_POST") {
+        if (action.type === ADD_POST) {
             this._addPost();
         }
-        else if (action.type === "UPDATE_NEW_POST_TEXT") {
+        else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._updateNewPostText(action.message);
+        }
+        else if (action.type === ADD_MESSAGE) {
+            this._addMessage()
+        }
+        else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+            this._updateNewMessageText({ userId: action.userId, message: action.message })
         }
     },
     _renderEntireTree() {
@@ -51,6 +81,12 @@ let store = {
         this._renderEntireTree = observer;
     }
 }
+
+export const addPostActionCreator = () => ({ type: ADD_POST })
+export const updateNewPostActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, message: text })
+
+export const addMessageActionCreator = () => ({ type: ADD_MESSAGE })
+export const updateNewMessageActionCreator = (data) => ({ type: UPDATE_NEW_MESSAGE_TEXT, userId: data.userId, message: data.text })
 
 export default store;
 window.store = store;
