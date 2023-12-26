@@ -3,6 +3,7 @@ const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT"
 
 const ADD_MESSAGE = "ADD_MESSAGE"
 const UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT"
+const UPDATE_MESSAGES_PAGE = "UPDATE_MESSAGES_PAGE"
 
 let store = {
     state: {
@@ -61,6 +62,10 @@ let store = {
         this.state.messagePage.newMessageText.message = data.message;
         this._renderEntireTree();
     },
+    _updateMessagesPage() {
+        this.state.messagePage.newMessageText.message = '';
+        this._renderEntireTree();
+    },
     dispatch(action) {
         if (action.type === ADD_POST) {
             this._addPost();
@@ -73,6 +78,9 @@ let store = {
         }
         else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
             this._updateNewMessageText({ userId: action.userId, message: action.message })
+        }
+        else if (action.type === UPDATE_MESSAGES_PAGE) {
+            this._updateMessagesPage();
         }
     },
     _renderEntireTree() {
@@ -87,6 +95,7 @@ export const updateNewPostActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEX
 
 export const addMessageActionCreator = () => ({ type: ADD_MESSAGE })
 export const updateNewMessageActionCreator = (data) => ({ type: UPDATE_NEW_MESSAGE_TEXT, userId: data.userId, message: data.text })
+export const updateMessagesPage = () => ({ type: UPDATE_MESSAGES_PAGE })
 
 export default store;
 window.store = store;

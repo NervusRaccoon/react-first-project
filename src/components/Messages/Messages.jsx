@@ -6,7 +6,7 @@ import React from 'react';
 
 const Messages = (props) => {
 
-  let companionElemets = props.content.messagesData.map(companion => <Companion name={companion.userName} id={companion.userId} />)
+  let companionElemets = props.content.messagesData.map(companion => <Companion name={companion.userName} id={companion.userId} dispatch={props.dispatch} />)
   let currentCompanionId = window.location.href.split('/').slice(-1);
   let messageElemets = currentCompanionId == 'messages' || currentCompanionId == '' ? '' :
     props.content.messagesData.find(x => x.userId == currentCompanionId).messages.map(message =>
