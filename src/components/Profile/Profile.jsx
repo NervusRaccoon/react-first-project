@@ -1,5 +1,5 @@
 import classes from './Profile.module.css';
-import MyPosts from './MyPosts/MyPosts';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 
 const Profile = (props) => {
   return (
@@ -13,7 +13,7 @@ const Profile = (props) => {
         </div>
       </div>
       <div className={classes.posts}>
-        <MyPosts content={props.content} dispatch={props.dispatch} />
+        <MyPostsContainer content={props.content} dispatch={props.dispatch} />
       </div>
     </div>
   );

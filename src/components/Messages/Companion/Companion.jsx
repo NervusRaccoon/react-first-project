@@ -1,11 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import classes from './Companion.module.css';
-import { updateMessagesPage } from '../../../redux/state';
 
 const Companion = (props) => {
 
   let updatePage = () => {
-    props.dispatch(updateMessagesPage())
+    props.onMessagesPageChange();
   }
 
   return (
