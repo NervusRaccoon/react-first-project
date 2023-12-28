@@ -1,7 +1,7 @@
 import classes from './Profile.module.css';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 
-const Profile = (props) => {
+const Profile = () => {
   return (
     <div className={classes.content}>
       <div className={classes.profileInfo}>
@@ -13,7 +13,7 @@ const Profile = (props) => {
         </div>
       </div>
       <div className={classes.posts}>
-        <MyPostsContainer content={props.content} dispatch={props.dispatch} />
+        <MyPostsContainer />
       </div>
     </div>
   );

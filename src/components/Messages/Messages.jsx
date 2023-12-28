@@ -17,7 +17,7 @@ const Messages = (props) => {
 
   let onNewMessageChange = () => {
     let text = newMessageTextArea.current.value;
-    props.onNewMessageChange(text,currentCompanionId);
+    props.onNewMessageChange(text, currentCompanionId);
   }
 
   let newMessageTextArea = React.createRef();

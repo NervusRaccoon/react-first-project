@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import MessagesContainer from './components/Messages/MessagesContainer';
 
-const App = (props) => {
+const App = () => {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -17,8 +17,8 @@ const App = (props) => {
         </div>
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path="/profile"  element={<Profile content={props.state.profilePage} dispatch={props.dispatch}/>} />
-            <Route path="/messages/*" element={<MessagesContainer content={props.state.messagePage} dispatch={props.dispatch}/>} />
+            <Route path="/profile"  element={<Profile />} />
+            <Route path="/messages/*" element={<MessagesContainer />} />
           </Routes>
         </div>
       </div>
