@@ -7,20 +7,13 @@ import { Provider } from 'react-redux';
 import React from 'react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-let _renderEntireTree = () => {
-  root.render(
-    <React.StrictMode>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </React.StrictMode>
-  );
-}
-
-_renderEntireTree();
-
-store.subscribe(_renderEntireTree);
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);
 
 
 // If you want to start measuring performance in your app, pass a function

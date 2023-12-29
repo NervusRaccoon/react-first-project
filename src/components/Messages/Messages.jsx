@@ -5,11 +5,7 @@ import React from 'react';
 
 const Messages = (props) => {
 
-  let companionElemets = props.messagesData.map(companion => <Companion name={companion.userName} id={companion.userId} onMessagesPageChange={props.onMessagesPageChange} />)
   let currentCompanionId = window.location.href.split('/').slice(-1);
-  let messageElemets = currentCompanionId == 'messages' || currentCompanionId == '' ? '' :
-    props.messagesData.find(x => x.userId == currentCompanionId).messages.map(message =>
-      <MessageItem message={message.message} userName={message.userName} side={message.side} />)
 
   let addMessage = () => {
     props.addMessage();
@@ -19,6 +15,16 @@ const Messages = (props) => {
     let text = newMessageTextArea.current.value;
     props.onNewMessageChange(text, currentCompanionId);
   }
+
+  let onMessagesPageChange = (userId) => {
+    props.onMessagesPageChange(userId);
+  }
+
+  let companionElemets = props.messagesData.map(companion => <Companion name={companion.userName} id={companion.userId} onMessagesPageChange={onMessagesPageChange} />)
+
+  let messageElemets = currentCompanionId == 'messages' || currentCompanionId == '' ? '' :
+  props.messagesData.find(x => x.userId == currentCompanionId).messages.map(message =>
+    <MessageItem message={message.message} userName={message.userName} side={message.side} />)
 
   let newMessageTextArea = React.createRef();
 

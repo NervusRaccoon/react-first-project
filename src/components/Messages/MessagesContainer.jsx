@@ -2,7 +2,6 @@ import { addMessageActionCreator, updateNewMessageActionCreator, updateMessagesP
 import Messages from './Messages'
 import { connect } from 'react-redux';
 
-debugger;
 let mapStateToProps = (state) => {
   return {
     messagesData: state.messagePage.messagesData,
@@ -16,10 +15,10 @@ let mapDispatchToProps = (dispatch) => {
       dispatch(addMessageActionCreator());
     },
     onNewMessageChange: (text, userId) => {
-      dispatch(updateNewMessageActionCreator({ text: text, userId: userId }));
+      dispatch(updateNewMessageActionCreator(userId, text));
     },
-    onMessagesPageChange: () => {
-      dispatch(updateMessagesPage());
+    onMessagesPageChange: (userId) => {
+      dispatch(updateMessagesPage(userId));
     }
   }
 }

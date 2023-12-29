@@ -4,7 +4,7 @@ import classes from './Companion.module.css';
 const Companion = (props) => {
 
   let updatePage = () => {
-    props.onMessagesPageChange();
+    props.onMessagesPageChange(props.id);
   }
 
   return (

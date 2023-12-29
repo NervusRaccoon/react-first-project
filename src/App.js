@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import MessagesContainer from './components/Messages/MessagesContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Routes>
             <Route path="/profile"  element={<Profile />} />
             <Route path="/messages/*" element={<MessagesContainer />} />
+            <Route path="/users" element={<UsersContainer />} />
           </Routes>
         </div>
       </div>

@@ -13,20 +13,22 @@ let profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case (ADD_POST): {
             if (state.newPostText !== '') {
-                let newPost = { userName: 'Ayato', message: state.newPostText, likesCount: 0 };
-                state.posts.push(newPost);
-                state.newPostText = '';
+                let stateCopy = {
+                    ...state,
+                    posts: [...state.posts, {userName: 'Ayato', message: state.newPostText, likesCount: 0 }],
+                    newPostText: ''};
+                return stateCopy;
             }
             break;
         }
         case (UPDATE_NEW_POST_TEXT): {
-            state.newPostText = action.message;
-            break;
+            let stateCopy = {
+                ...state,
+                newPostText: action.message};
+            return stateCopy;
         }
-        default: break;
+        default: return state;
     }
-
-    return state;
 }
 
 export const addPostActionCreator = () => ({ type: ADD_POST })
