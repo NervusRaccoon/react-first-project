@@ -6,6 +6,7 @@ const Navbar = () => {
       <nav className={classes.nav}>
         <NavItem path="/profile" name="Profile" />
         <NavItem path="/messages" name="Messages" />
+        <NavItem path="/users" name="Users" />
         <NavItem path="/news" name="News" />
         <NavItem path="/music" name="Music" />
         <NavItem path="/settings" name="Settings" />
