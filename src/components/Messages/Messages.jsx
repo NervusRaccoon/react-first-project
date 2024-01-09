@@ -13,7 +13,7 @@ const Messages = (props) => {
 
   let onNewMessageChange = () => {
     let text = newMessageTextArea.current.value;
-    props.onNewMessageChange(text, currentCompanionId);
+    props.onNewMessageChange(currentCompanionId, text);
   }
 
   let onMessagesPageChange = (userId) => {
