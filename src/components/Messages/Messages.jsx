@@ -5,25 +5,22 @@ import React from 'react';
 
 const Messages = (props) => {
 
-  let currentCompanionId = window.location.href.split('/').slice(-1);
-
   let addMessage = () => {
     props.addMessage();
   }
 
   let onNewMessageChange = () => {
     let text = newMessageTextArea.current.value;
-    props.onNewMessageChange(currentCompanionId, text);
+    props.onNewMessageChange(props.userId, text);
   }
 
   let onMessagesPageChange = (userId) => {
     props.onMessagesPageChange(userId);
   }
 
-  let companionElemets = props.messagesData.map(companion => <Companion name={companion.userName} id={companion.userId} onMessagesPageChange={onMessagesPageChange} />)
+  let companionElemets = props.messagesData.map(companion => <Companion name={companion.userName} id={companion.userId} currentUserId={props.userId} onMessagesPageChange={onMessagesPageChange} />)
 
-  let messageElemets = currentCompanionId == 'messages' || currentCompanionId == '' ? '' :
-  props.messagesData.find(x => x.userId == currentCompanionId).messages.map(message =>
+  let messageElemets = props.messagesData.find(x => x.userId == props.userId).messages.map(message =>
     <MessageItem message={message.message} userName={message.userName} side={message.side} />)
 
   let newMessageTextArea = React.createRef();

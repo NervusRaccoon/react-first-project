@@ -9,7 +9,7 @@ const Companion = (props) => {
 
   return (
     <div className={classes.content}>
-      <NavLink to={`/messages/${props.id}`} className={({ isActive }) => isActive ? classes.activeLink : classes.inactiveLink }>
+      <NavLink to={`/messages/${props.id}`} className={props.id == props.currentUserId ? classes.activeLink : classes.inactiveLink }>
         <div className={classes.button} onClick={updatePage}>
           {props.name}
         </div>
