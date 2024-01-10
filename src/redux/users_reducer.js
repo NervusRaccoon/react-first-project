@@ -10,6 +10,7 @@ let initialState = {
     currentPage: 2,
     pageSize: 5,
     isFetching: false,
+    maxUsersPagesCount: 5,
     users: []
 }
 
@@ -20,7 +21,7 @@ let usersReducer = (state = initialState, action) => {
                 ...state,
                 users: state.users.map(x => {
                     if (x.id === action.userId) {
-                        return {...x, isFollowed: true}
+                        return {...x, followed: true}
                     }
                     return x})
             }
@@ -31,7 +32,7 @@ let usersReducer = (state = initialState, action) => {
                 ...state,
                 users: state.users.map(x => {
                     if (x.id === action.userId) {
-                        return {...x, isFollowed: false}
+                        return {...x, followed: false}
                     }
                     return x})
             }

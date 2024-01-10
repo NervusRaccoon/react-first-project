@@ -37,6 +37,7 @@ class UsersContainer extends React.Component {
         follow={this.props.follow}
         unfollow={this.props.unfollow}
         onPageChanged={this.onPageChanged}
+        maxUsersPagesCount={this.props.maxUsersPagesCount}
       />
     </>
   }
@@ -48,7 +49,8 @@ let mapStateToProps = (state) => {
     pageSize: state.usersPage.pageSize,
     currentPage: state.usersPage.currentPage,
     totalUsersCount: state.usersPage.totalUsersCount,
-    isFetching: state.usersPage.isFetching
+    isFetching: state.usersPage.isFetching,
+    maxUsersPagesCount: state.usersPage.maxUsersPagesCount
   }
 }
 
